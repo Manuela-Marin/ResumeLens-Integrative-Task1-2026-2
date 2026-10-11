@@ -1,0 +1,10 @@
+# ResumeLens dependencies.
+#
+# pyformlang : finite automata and finite-state transducers.
+# textX      : meta-language used to implement the candidate profile DSL.
+# pydot      : converts the .dot diagrams to .png
+
+
+pyformlang==1.0.11
+textX==4.4.0
+pydot==4.0.1
