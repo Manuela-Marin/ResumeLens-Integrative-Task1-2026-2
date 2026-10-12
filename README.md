@@ -100,7 +100,7 @@ implemented.
 | Module and test design              | pending |
 | 1. Extraction                       | done    |
 | 2. Normalization                    | done    |
-| 3. Classification                   | pending |
+| 3. Classification                   | done    |
 | 4. Candidate profile language       | pending |
 | Visualization and console interface | pending |
 | Unit tests                          | pending |
