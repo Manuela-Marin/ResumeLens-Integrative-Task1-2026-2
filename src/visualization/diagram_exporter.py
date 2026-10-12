@@ -140,7 +140,7 @@ def to_png(dot_path):
 
     png_path = dot_path[:-4] + ".png"
     try:
-        graphs[0].write_png(png_path)
+        graphs[0].write_png(png_path, encoding="utf-8")
     except FileNotFoundError:
         return None, ("Graphviz is not installed, or `dot` is not on the "
                           "PATH")
