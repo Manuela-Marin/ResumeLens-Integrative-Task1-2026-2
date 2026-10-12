@@ -96,9 +96,9 @@ implemented.
 | Stage                               | State   |
 | ----------------------------------- | ------- |
 | Project setup                       | done    |
-| Literature review                   | pending |
+| Literature review                   | done    |
 | Module and test design              | pending |
-| 1. Extraction                       | pending |
+| 1. Extraction                       | done    |
 | 2. Normalization                    | pending |
 | 3. Classification                   | pending |
 | 4. Candidate profile language       | pending |

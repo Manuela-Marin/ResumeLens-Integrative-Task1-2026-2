@@ -1,0 +1,21 @@
+Shuri Udaku
+Email: shuri.udaku@example.com
+Phone: +57 302 555 9011
+Location: Birnin Zana
+Role: Data engineer
+
+Summary:
+Engineer with 5 years of experience building batch and streaming data
+pipelines for research platforms.
+
+Education:
+MSc in Systems Engineering, Wakanda Institute of Technology, 2021
+
+Experience:
+Data Engineer | Wakanda Design Group | 5 years
+- Built distributed processing jobs over the sensor archive.
+- Scheduled the daily pipelines and monitored their execution.
+- Modelled the analytical tables consumed by the research teams.
+
+Technical Skills:
+Python, Apache Spark, Airflow, BigQuery, Git

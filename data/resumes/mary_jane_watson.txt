@@ -1,0 +1,21 @@
+Mary Jane Watson
+Email: mary.jane.watson@example.com
+Phone: +57 301 555 2048
+Location: Queens, New York
+Role: Machine learning practitioner
+
+Summary:
+Engineer with 2 years of experience developing predictive models and
+data-processing pipelines.
+
+Education:
+BSc in Systems Engineering, Empire State University, 2023
+
+Experience:
+Machine Learning Engineer | Horizon Labs | 2 years
+- Built predictive models for demand forecasting.
+- Prepared data-processing pipelines for training datasets.
+- Evaluated model performance and documented the results.
+
+Technical Skills:
+Python, Pandas, NumPy, Scikit-learn, TensorFlow, SQL, Git

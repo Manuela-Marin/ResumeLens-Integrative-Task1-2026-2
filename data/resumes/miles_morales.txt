@@ -1,0 +1,21 @@
+Miles Morales
+Email: miles.morales@example.com
+Phone: 305-555-417
+Location: Brooklyn, New York
+Role: Mobile application developer
+
+Summary:
+Developer with 3 years of experience building Android applications for
+community and campus services.
+
+Education:
+BSc in Systems Engineering, Brooklyn Visions Academy, 2024
+
+Experience:
+Android Developer | Visions Mobile Lab | 3 years
+- Built the campus services application for Android devices.
+- Implemented offline storage so the application works without a connection.
+- Consumed the university services interface over the network.
+
+Technical Skills:
+Kotlin, Android SDK, Room, REST APIs, Git

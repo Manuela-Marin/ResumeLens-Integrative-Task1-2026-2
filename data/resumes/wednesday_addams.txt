@@ -1,0 +1,23 @@
+Wednesday Addams
+Email: wednesday.addams@example.com
+Phone: 300-555-123
+Location: Nevermore Academy, Jericho
+Role: Student and independent investigator
+
+Summary:
+Detail-oriented developer with 3 years of experience developing web
+applications that organize information and manage structured records.
+
+Education:
+BSc in Computer Science, Nevermore Academy, 2024
+
+Experience:
+Web Application Developer | Nevermore Academy Projects | 3 years
+- Developed web applications for organizing investigation notes.
+- Created interfaces for consulting records related to events and people.
+- Implemented backend services using Node.js.
+- Stored structured information using PostgreSQL databases.
+- Used Git to maintain version history of the applications.
+
+Technical Skills:
+JS, React.js, NodeJS, Postgres, Git

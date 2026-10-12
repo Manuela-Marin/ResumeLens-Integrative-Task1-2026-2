@@ -1,0 +1,20 @@
+Bruce Banner
+Email: bruce.banner@example.com
+Phone: 318-555-404
+Location: Dayton, Ohio
+Role: Research assistant
+
+Summary:
+Researcher with 1 year of experience writing small scripts for laboratory
+data collection.
+
+Education:
+PhD in Nuclear Physics, Harvard University, 2010
+
+Experience:
+Laboratory Research Assistant | Culver University | 1 years
+- Collected measurements from laboratory instruments.
+- Wrote small scripts to tidy the collected files.
+
+Technical Skills:
+Python, Git, Fortran
