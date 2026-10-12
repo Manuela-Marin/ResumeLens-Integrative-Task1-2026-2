@@ -99,7 +99,7 @@ implemented.
 | Literature review                   | done    |
 | Module and test design              | pending |
 | 1. Extraction                       | done    |
-| 2. Normalization                    | pending |
+| 2. Normalization                    | done    |
 | 3. Classification                   | pending |
 | 4. Candidate profile language       | pending |
 | Visualization and console interface | pending |
