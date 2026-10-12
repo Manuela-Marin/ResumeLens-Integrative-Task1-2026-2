@@ -175,10 +175,22 @@ def option_generate_diagrams():
     """Menu option: write the .dot diagrams and try to convert them to .png."""
     written = diagram_exporter.generate_all()
     _print_title("Diagrams written")
+    failures = 0
     for path in written:
-        png = diagram_exporter.to_png(path)
-        print(" ", path, "->",
-              png if png else "(png skipped, pydot/Graphviz not available)")
+        png, reason = diagram_exporter.to_png(path)
+        if png:
+            print("  OK   ", os.path.basename(png))
+        else:
+            failures += 1
+            print("  DOT  ", os.path.basename(path), "- no png:", reason)
+    print()
+    print(len(written), "dot file(s) written in",
+        diagram_exporter.OUTPUT_DIRECTORY)
+    if failures:
+        print(failures, "could not be converted to png.  Paste the .dot "
+                            "contents into")
+        print("https://dreampuf.github.io/GraphvizOnline/ to obtain the "
+             "image.")
 
 
 def option_validate_profile():

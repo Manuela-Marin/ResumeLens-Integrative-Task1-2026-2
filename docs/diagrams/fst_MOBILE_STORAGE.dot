@@ -47,16 +47,16 @@ digraph T_MOBILE_STORAGE {
     n_q_sqli [shape=circle, label="i"];
     n_q_sqlit [shape=circle, label="t"];
     n_q_sqlite [shape=circle, label="e"];
-    n_q₀ [shape=circle, label="q₀"];
-    __start -> n_q₀;
-    n_q₀ -> n_q_S [label="S:lambda"];
+    n_q_8320_ [shape=circle, label="q₀"];
+    __start -> n_q_8320_;
+    n_q_8320_ -> n_q_S [label="S:lambda"];
     n_q_S -> n_q_SQ [label="Q:lambda"];
     n_q_SQ -> n_q_SQL [label="L:lambda"];
     n_q_SQL -> n_q_SQLi [label="i:lambda"];
     n_q_SQLi -> n_q_SQLit [label="t:lambda"];
     n_q_SQLit -> n_q_SQLite [label="e:lambda"];
     n_q_SQLite -> n_F_SQLITE [label="lambda:SQLITE"];
-    n_q₀ -> n_q_s [label="s:lambda"];
+    n_q_8320_ -> n_q_s [label="s:lambda"];
     n_q_s -> n_q_sq [label="q:lambda"];
     n_q_sq -> n_q_sql [label="l:lambda"];
     n_q_sql -> n_q_sqli [label="i:lambda"];
@@ -65,7 +65,7 @@ digraph T_MOBILE_STORAGE {
     n_q_sqlite -> n_F_SQLITE [label="lambda:SQLITE"];
     n_q_SQLite -> n_q_SQLite3 [label="3:lambda"];
     n_q_SQLite3 -> n_F_SQLITE [label="lambda:SQLITE"];
-    n_q₀ -> n_q_F [label="F:lambda"];
+    n_q_8320_ -> n_q_F [label="F:lambda"];
     n_q_F -> n_q_Fi [label="i:lambda"];
     n_q_Fi -> n_q_Fir [label="r:lambda"];
     n_q_Fir -> n_q_Fire [label="e:lambda"];
@@ -74,7 +74,7 @@ digraph T_MOBILE_STORAGE {
     n_q_Fireba -> n_q_Firebas [label="s:lambda"];
     n_q_Firebas -> n_q_Firebase [label="e:lambda"];
     n_q_Firebase -> n_F_FIREBASE [label="lambda:FIREBASE"];
-    n_q₀ -> n_q_f [label="f:lambda"];
+    n_q_8320_ -> n_q_f [label="f:lambda"];
     n_q_f -> n_q_fi [label="i:lambda"];
     n_q_fi -> n_q_fir [label="r:lambda"];
     n_q_fir -> n_q_fire [label="e:lambda"];
@@ -83,7 +83,7 @@ digraph T_MOBILE_STORAGE {
     n_q_fireba -> n_q_firebas [label="s:lambda"];
     n_q_firebas -> n_q_firebase [label="e:lambda"];
     n_q_firebase -> n_F_FIREBASE [label="lambda:FIREBASE"];
-    n_q₀ -> n_q_R [label="R:lambda"];
+    n_q_8320_ -> n_q_R [label="R:lambda"];
     n_q_R -> n_q_Ro [label="o:lambda"];
     n_q_Ro -> n_q_Roo [label="o:lambda"];
     n_q_Roo -> n_q_Room [label="m:lambda"];

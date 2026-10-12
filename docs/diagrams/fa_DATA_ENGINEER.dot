@@ -2,16 +2,16 @@ digraph DATA_ENGINEER {
     rankdir=LR;
     node [shape=circle, fontsize=10];
     __start [shape=point, label=""];
-    n_q₀ [shape=circle, label="q₀"];
-    n_q₁ [shape=circle, label="q₁"];
-    n_q₂ [shape=circle, label="q₂"];
-    n_q₃ [shape=circle, label="q₃"];
-    n_q₄ [shape=circle, label="q₄"];
-    n_q₅ [shape=doublecircle, label="q₅"];
-    __start -> n_q₀;
-    n_q₀ -> n_q₁ [label="PYTHON, SCALA"];
-    n_q₁ -> n_q₂ [label="SPARK, HADOOP, KAFKA"];
-    n_q₂ -> n_q₃ [label="AIRFLOW, DBT"];
-    n_q₃ -> n_q₄ [label="BIGQUERY, POSTGRESQL, SQL"];
-    n_q₄ -> n_q₅ [label="GIT"];
+    n_q_8320_ [shape=circle, label="q₀"];
+    n_q_8321_ [shape=circle, label="q₁"];
+    n_q_8322_ [shape=circle, label="q₂"];
+    n_q_8323_ [shape=circle, label="q₃"];
+    n_q_8324_ [shape=circle, label="q₄"];
+    n_q_8325_ [shape=doublecircle, label="q₅"];
+    __start -> n_q_8320_;
+    n_q_8320_ -> n_q_8321_ [label="PYTHON, SCALA"];
+    n_q_8321_ -> n_q_8322_ [label="SPARK, HADOOP, KAFKA"];
+    n_q_8322_ -> n_q_8323_ [label="AIRFLOW, DBT"];
+    n_q_8323_ -> n_q_8324_ [label="BIGQUERY, POSTGRESQL, SQL"];
+    n_q_8324_ -> n_q_8325_ [label="GIT"];
 }

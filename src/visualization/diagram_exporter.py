@@ -11,12 +11,16 @@ PROJECT_ROOT = os.path.dirname(os.path.dirname(
 
 OUTPUT_DIRECTORY = os.path.join(PROJECT_ROOT, "docs", "diagrams")
 
+# Characters allowed verbatim inside a DOT node identifier.
+ASCII_SAFE = ("abcdefghijklmnopqrstuvwxyz"
+              "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+              "0123456789_")
 
 def _node_name(state):
     """Return a DOT-safe node identifier for a state name."""
     safe = []
     for character in str(state):
-        if character.isalnum() or character == "_":
+        if character in ASCII_SAFE:
             safe.append(character)
         else:
             safe.append("_" + str(ord(character)) + "_")
@@ -123,13 +127,23 @@ def generate_all(directory=None):
 def to_png(dot_path):
     """Convert one .dot file to .png with pydot"""
     try:
-        import pydot
+            import pydot
     except ImportError:
-        return None
+        return None, "pydot is not installed"
+
     try:
-        (graph,) = pydot.graph_from_dot_file(dot_path)
-        png_path = dot_path[:-4] + ".png"
-        graph.write_png(png_path)
-        return png_path
-    except Exception:
-        return None
+        graphs = pydot.graph_from_dot_file(dot_path, encoding="utf-8")
+    except Exception as error:
+        return None, "the .dot file could not be parsed: " + str(error)
+    if not graphs:
+        return None, "the .dot file holds no graph"
+
+    png_path = dot_path[:-4] + ".png"
+    try:
+        graphs[0].write_png(png_path)
+    except FileNotFoundError:
+        return None, ("Graphviz is not installed, or `dot` is not on the "
+                          "PATH")
+    except Exception as error:
+        return None, "Graphviz failed: " + str(error)
+    return png_path, None

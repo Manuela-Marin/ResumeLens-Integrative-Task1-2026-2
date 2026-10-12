@@ -62,9 +62,9 @@ digraph T_MOBILE_FRAMEWORK {
     n_q_flutt [shape=circle, label="t"];
     n_q_flutte [shape=circle, label="e"];
     n_q_flutter [shape=circle, label="r"];
-    n_q₀ [shape=circle, label="q₀"];
-    __start -> n_q₀;
-    n_q₀ -> n_q_A [label="A:lambda"];
+    n_q_8320_ [shape=circle, label="q₀"];
+    __start -> n_q_8320_;
+    n_q_8320_ -> n_q_A [label="A:lambda"];
     n_q_A -> n_q_An [label="n:lambda"];
     n_q_An -> n_q_And [label="d:lambda"];
     n_q_And -> n_q_Andr [label="r:lambda"];
@@ -81,7 +81,7 @@ digraph T_MOBILE_FRAMEWORK {
     n_q_AndroidS -> n_q_AndroidSD [label="D:lambda"];
     n_q_AndroidSD -> n_q_AndroidSDK [label="K:lambda"];
     n_q_AndroidSDK -> n_F_ANDROID_SDK [label="lambda:ANDROID_SDK"];
-    n_q₀ -> n_q_F [label="F:lambda"];
+    n_q_8320_ -> n_q_F [label="F:lambda"];
     n_q_F -> n_q_Fl [label="l:lambda"];
     n_q_Fl -> n_q_Flu [label="u:lambda"];
     n_q_Flu -> n_q_Flut [label="t:lambda"];
@@ -89,7 +89,7 @@ digraph T_MOBILE_FRAMEWORK {
     n_q_Flutt -> n_q_Flutte [label="e:lambda"];
     n_q_Flutte -> n_q_Flutter [label="r:lambda"];
     n_q_Flutter -> n_F_FLUTTER [label="lambda:FLUTTER"];
-    n_q₀ -> n_q_f [label="f:lambda"];
+    n_q_8320_ -> n_q_f [label="f:lambda"];
     n_q_f -> n_q_fl [label="l:lambda"];
     n_q_fl -> n_q_flu [label="u:lambda"];
     n_q_flu -> n_q_flut [label="t:lambda"];
@@ -97,7 +97,7 @@ digraph T_MOBILE_FRAMEWORK {
     n_q_flutt -> n_q_flutte [label="e:lambda"];
     n_q_flutte -> n_q_flutter [label="r:lambda"];
     n_q_flutter -> n_F_FLUTTER [label="lambda:FLUTTER"];
-    n_q₀ -> n_q_R [label="R:lambda"];
+    n_q_8320_ -> n_q_R [label="R:lambda"];
     n_q_R -> n_q_Re [label="e:lambda"];
     n_q_Re -> n_q_Rea [label="a:lambda"];
     n_q_Rea -> n_q_Reac [label="c:lambda"];
@@ -117,7 +117,7 @@ digraph T_MOBILE_FRAMEWORK {
     n_q_ReactNati -> n_q_ReactNativ [label="v:lambda"];
     n_q_ReactNativ -> n_q_ReactNative [label="e:lambda"];
     n_q_ReactNative -> n_F_REACT_NATIVE [label="lambda:REACT_NATIVE"];
-    n_q₀ -> n_q_S [label="S:lambda"];
+    n_q_8320_ -> n_q_S [label="S:lambda"];
     n_q_S -> n_q_Sw [label="w:lambda"];
     n_q_Sw -> n_q_Swi [label="i:lambda"];
     n_q_Swi -> n_q_Swif [label="f:lambda"];

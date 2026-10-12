@@ -103,4 +103,4 @@ implemented.
 | 3. Classification                   | done    |
 | 4. Candidate profile language       | done    |
 | Visualization and console interface | done    |
-| Unit tests                          | pending |
+| Unit tests                          | done    |

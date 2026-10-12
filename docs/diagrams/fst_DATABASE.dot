@@ -66,9 +66,9 @@ digraph T_DATABASE {
     n_q_s [shape=circle, label="s"];
     n_q_sq [shape=circle, label="q"];
     n_q_sql [shape=circle, label="l"];
-    n_q₀ [shape=circle, label="q₀"];
-    __start -> n_q₀;
-    n_q₀ -> n_q_P [label="P:lambda"];
+    n_q_8320_ [shape=circle, label="q₀"];
+    __start -> n_q_8320_;
+    n_q_8320_ -> n_q_P [label="P:lambda"];
     n_q_P -> n_q_Po [label="o:lambda"];
     n_q_Po -> n_q_Pos [label="s:lambda"];
     n_q_Pos -> n_q_Post [label="t:lambda"];
@@ -81,7 +81,7 @@ digraph T_DATABASE {
     n_q_PostgreS -> n_q_PostgreSQ [label="Q:lambda"];
     n_q_PostgreSQ -> n_q_PostgreSQL [label="L:lambda"];
     n_q_PostgreSQL -> n_F_POSTGRESQL [label="lambda:POSTGRESQL"];
-    n_q₀ -> n_q_p [label="p:lambda"];
+    n_q_8320_ -> n_q_p [label="p:lambda"];
     n_q_p -> n_q_po [label="o:lambda"];
     n_q_po -> n_q_pos [label="s:lambda"];
     n_q_pos -> n_q_post [label="t:lambda"];
@@ -90,7 +90,7 @@ digraph T_DATABASE {
     n_q_postgr -> n_q_postgre [label="e:lambda"];
     n_q_postgre -> n_q_postgres [label="s:lambda"];
     n_q_postgres -> n_F_POSTGRESQL [label="lambda:POSTGRESQL"];
-    n_q₀ -> n_q_N [label="N:lambda"];
+    n_q_8320_ -> n_q_N [label="N:lambda"];
     n_q_N -> n_q_No [label="o:lambda"];
     n_q_No -> n_q_NoS [label="S:lambda"];
     n_q_NoS -> n_q_NoSQ [label="Q:lambda"];
@@ -106,7 +106,7 @@ digraph T_DATABASE {
     n_q_No_32_S -> n_q_No_32_SQ [label="Q:lambda"];
     n_q_No_32_SQ -> n_q_No_32_SQL [label="L:lambda"];
     n_q_No_32_SQL -> n_F_NOSQL [label="lambda:NOSQL"];
-    n_q₀ -> n_q_B [label="B:lambda"];
+    n_q_8320_ -> n_q_B [label="B:lambda"];
     n_q_B -> n_q_Bi [label="i:lambda"];
     n_q_Bi -> n_q_Big [label="g:lambda"];
     n_q_Big -> n_q_BigQ [label="Q:lambda"];
@@ -122,7 +122,7 @@ digraph T_DATABASE {
     n_q_Big_32_Que -> n_q_Big_32_Quer [label="r:lambda"];
     n_q_Big_32_Quer -> n_q_Big_32_Query [label="y:lambda"];
     n_q_Big_32_Query -> n_F_BIGQUERY [label="lambda:BIGQUERY"];
-    n_q₀ -> n_q_b [label="b:lambda"];
+    n_q_8320_ -> n_q_b [label="b:lambda"];
     n_q_b -> n_q_bi [label="i:lambda"];
     n_q_bi -> n_q_big [label="g:lambda"];
     n_q_big -> n_q_bigq [label="q:lambda"];
@@ -131,11 +131,11 @@ digraph T_DATABASE {
     n_q_bigque -> n_q_bigquer [label="r:lambda"];
     n_q_bigquer -> n_q_bigquery [label="y:lambda"];
     n_q_bigquery -> n_F_BIGQUERY [label="lambda:BIGQUERY"];
-    n_q₀ -> n_q_S [label="S:lambda"];
+    n_q_8320_ -> n_q_S [label="S:lambda"];
     n_q_S -> n_q_SQ [label="Q:lambda"];
     n_q_SQ -> n_q_SQL [label="L:lambda"];
     n_q_SQL -> n_F_SQL [label="lambda:SQL"];
-    n_q₀ -> n_q_s [label="s:lambda"];
+    n_q_8320_ -> n_q_s [label="s:lambda"];
     n_q_s -> n_q_sq [label="q:lambda"];
     n_q_sq -> n_q_sql [label="l:lambda"];
     n_q_sql -> n_F_SQL [label="lambda:SQL"];

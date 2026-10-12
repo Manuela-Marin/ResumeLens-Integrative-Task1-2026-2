@@ -142,9 +142,9 @@ digraph T_ML_FRAMEWORK {
     n_q_tensorfl [shape=circle, label="l"];
     n_q_tensorflo [shape=circle, label="o"];
     n_q_tensorflow [shape=circle, label="w"];
-    n_q₀ [shape=circle, label="q₀"];
-    __start -> n_q₀;
-    n_q₀ -> n_q_s [label="s:lambda"];
+    n_q_8320_ [shape=circle, label="q₀"];
+    __start -> n_q_8320_;
+    n_q_8320_ -> n_q_s [label="s:lambda"];
     n_q_s -> n_q_sk [label="k:lambda"];
     n_q_sk -> n_q_skl [label="l:lambda"];
     n_q_skl -> n_q_skle [label="e:lambda"];
@@ -164,7 +164,7 @@ digraph T_ML_FRAMEWORK {
     n_q_scikit_32_lea -> n_q_scikit_32_lear [label="r:lambda"];
     n_q_scikit_32_lear -> n_q_scikit_32_learn [label="n:lambda"];
     n_q_scikit_32_learn -> n_F_SCIKIT_LEARN [label="lambda:SCIKIT_LEARN"];
-    n_q₀ -> n_q_S [label="S:lambda"];
+    n_q_8320_ -> n_q_S [label="S:lambda"];
     n_q_S -> n_q_Sc [label="c:lambda"];
     n_q_Sc -> n_q_Sci [label="i:lambda"];
     n_q_Sci -> n_q_Scik [label="k:lambda"];
@@ -177,7 +177,7 @@ digraph T_ML_FRAMEWORK {
     n_q_Scikit_45_lea -> n_q_Scikit_45_lear [label="r:lambda"];
     n_q_Scikit_45_lear -> n_q_Scikit_45_learn [label="n:lambda"];
     n_q_Scikit_45_learn -> n_F_SCIKIT_LEARN [label="lambda:SCIKIT_LEARN"];
-    n_q₀ -> n_q_T [label="T:lambda"];
+    n_q_8320_ -> n_q_T [label="T:lambda"];
     n_q_T -> n_q_Te [label="e:lambda"];
     n_q_Te -> n_q_Ten [label="n:lambda"];
     n_q_Ten -> n_q_Tens [label="s:lambda"];
@@ -194,7 +194,7 @@ digraph T_ML_FRAMEWORK {
     n_q_Tensor_32_Fl -> n_q_Tensor_32_Flo [label="o:lambda"];
     n_q_Tensor_32_Flo -> n_q_Tensor_32_Flow [label="w:lambda"];
     n_q_Tensor_32_Flow -> n_F_TENSORFLOW [label="lambda:TENSORFLOW"];
-    n_q₀ -> n_q_t [label="t:lambda"];
+    n_q_8320_ -> n_q_t [label="t:lambda"];
     n_q_t -> n_q_te [label="e:lambda"];
     n_q_te -> n_q_ten [label="n:lambda"];
     n_q_ten -> n_q_tens [label="s:lambda"];
@@ -205,7 +205,7 @@ digraph T_ML_FRAMEWORK {
     n_q_tensorfl -> n_q_tensorflo [label="o:lambda"];
     n_q_tensorflo -> n_q_tensorflow [label="w:lambda"];
     n_q_tensorflow -> n_F_TENSORFLOW [label="lambda:TENSORFLOW"];
-    n_q₀ -> n_q_P [label="P:lambda"];
+    n_q_8320_ -> n_q_P [label="P:lambda"];
     n_q_P -> n_q_Py [label="y:lambda"];
     n_q_Py -> n_q_PyT [label="T:lambda"];
     n_q_PyT -> n_q_PyTo [label="o:lambda"];
@@ -220,7 +220,7 @@ digraph T_ML_FRAMEWORK {
     n_q_Py_32_Tor -> n_q_Py_32_Torc [label="c:lambda"];
     n_q_Py_32_Torc -> n_q_Py_32_Torch [label="h:lambda"];
     n_q_Py_32_Torch -> n_F_PYTORCH [label="lambda:PYTORCH"];
-    n_q₀ -> n_q_p [label="p:lambda"];
+    n_q_8320_ -> n_q_p [label="p:lambda"];
     n_q_p -> n_q_py [label="y:lambda"];
     n_q_py -> n_q_pyt [label="t:lambda"];
     n_q_pyt -> n_q_pyto [label="o:lambda"];
@@ -228,7 +228,7 @@ digraph T_ML_FRAMEWORK {
     n_q_pytor -> n_q_pytorc [label="c:lambda"];
     n_q_pytorc -> n_q_pytorch [label="h:lambda"];
     n_q_pytorch -> n_F_PYTORCH [label="lambda:PYTORCH"];
-    n_q₀ -> n_q_M [label="M:lambda"];
+    n_q_8320_ -> n_q_M [label="M:lambda"];
     n_q_M -> n_q_Ma [label="a:lambda"];
     n_q_Ma -> n_q_Mac [label="c:lambda"];
     n_q_Mac -> n_q_Mach [label="h:lambda"];

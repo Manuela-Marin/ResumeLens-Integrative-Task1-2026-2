@@ -38,9 +38,9 @@ digraph T_API {
     n_q_graph [shape=circle, label="h"];
     n_q_graphq [shape=circle, label="q"];
     n_q_graphql [shape=circle, label="l"];
-    n_q₀ [shape=circle, label="q₀"];
-    __start -> n_q₀;
-    n_q₀ -> n_q_R [label="R:lambda"];
+    n_q_8320_ [shape=circle, label="q₀"];
+    __start -> n_q_8320_;
+    n_q_8320_ -> n_q_R [label="R:lambda"];
     n_q_R -> n_q_RE [label="E:lambda"];
     n_q_RE -> n_q_RES [label="S:lambda"];
     n_q_RES -> n_q_REST [label="T:lambda"];
@@ -60,7 +60,7 @@ digraph T_API {
     n_q_RESTful_32_AP -> n_q_RESTful_32_API [label="I:lambda"];
     n_q_RESTful_32_API -> n_q_RESTful_32_APIs [label="s:lambda"];
     n_q_RESTful_32_APIs -> n_F_REST_API [label="lambda:REST_API"];
-    n_q₀ -> n_q_G [label="G:lambda"];
+    n_q_8320_ -> n_q_G [label="G:lambda"];
     n_q_G -> n_q_Gr [label="r:lambda"];
     n_q_Gr -> n_q_Gra [label="a:lambda"];
     n_q_Gra -> n_q_Grap [label="p:lambda"];
@@ -68,7 +68,7 @@ digraph T_API {
     n_q_Graph -> n_q_GraphQ [label="Q:lambda"];
     n_q_GraphQ -> n_q_GraphQL [label="L:lambda"];
     n_q_GraphQL -> n_F_GRAPHQL [label="lambda:GRAPHQL"];
-    n_q₀ -> n_q_g [label="g:lambda"];
+    n_q_8320_ -> n_q_g [label="g:lambda"];
     n_q_g -> n_q_gr [label="r:lambda"];
     n_q_gr -> n_q_gra [label="a:lambda"];
     n_q_gra -> n_q_grap [label="p:lambda"];

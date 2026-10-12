@@ -51,15 +51,15 @@ digraph T_DATA_PLATFORM {
     n_q_Spa [shape=circle, label="a"];
     n_q_Spar [shape=circle, label="r"];
     n_q_Spark [shape=circle, label="k"];
-    n_q₀ [shape=circle, label="q₀"];
-    __start -> n_q₀;
-    n_q₀ -> n_q_S [label="S:lambda"];
+    n_q_8320_ [shape=circle, label="q₀"];
+    __start -> n_q_8320_;
+    n_q_8320_ -> n_q_S [label="S:lambda"];
     n_q_S -> n_q_Sp [label="p:lambda"];
     n_q_Sp -> n_q_Spa [label="a:lambda"];
     n_q_Spa -> n_q_Spar [label="r:lambda"];
     n_q_Spar -> n_q_Spark [label="k:lambda"];
     n_q_Spark -> n_F_SPARK [label="lambda:SPARK"];
-    n_q₀ -> n_q_A [label="A:lambda"];
+    n_q_8320_ -> n_q_A [label="A:lambda"];
     n_q_A -> n_q_Ap [label="p:lambda"];
     n_q_Ap -> n_q_Apa [label="a:lambda"];
     n_q_Apa -> n_q_Apac [label="c:lambda"];
@@ -72,7 +72,7 @@ digraph T_DATA_PLATFORM {
     n_q_Apache_32_Spa -> n_q_Apache_32_Spar [label="r:lambda"];
     n_q_Apache_32_Spar -> n_q_Apache_32_Spark [label="k:lambda"];
     n_q_Apache_32_Spark -> n_F_SPARK [label="lambda:SPARK"];
-    n_q₀ -> n_q_P [label="P:lambda"];
+    n_q_8320_ -> n_q_P [label="P:lambda"];
     n_q_P -> n_q_Py [label="y:lambda"];
     n_q_Py -> n_q_PyS [label="S:lambda"];
     n_q_PyS -> n_q_PySp [label="p:lambda"];
@@ -80,7 +80,7 @@ digraph T_DATA_PLATFORM {
     n_q_PySpa -> n_q_PySpar [label="r:lambda"];
     n_q_PySpar -> n_q_PySpark [label="k:lambda"];
     n_q_PySpark -> n_F_SPARK [label="lambda:SPARK"];
-    n_q₀ -> n_q_H [label="H:lambda"];
+    n_q_8320_ -> n_q_H [label="H:lambda"];
     n_q_H -> n_q_Ha [label="a:lambda"];
     n_q_Ha -> n_q_Had [label="d:lambda"];
     n_q_Had -> n_q_Hado [label="o:lambda"];
@@ -94,7 +94,7 @@ digraph T_DATA_PLATFORM {
     n_q_Apache_32_Hado -> n_q_Apache_32_Hadoo [label="o:lambda"];
     n_q_Apache_32_Hadoo -> n_q_Apache_32_Hadoop [label="p:lambda"];
     n_q_Apache_32_Hadoop -> n_F_HADOOP [label="lambda:HADOOP"];
-    n_q₀ -> n_q_K [label="K:lambda"];
+    n_q_8320_ -> n_q_K [label="K:lambda"];
     n_q_K -> n_q_Ka [label="a:lambda"];
     n_q_Ka -> n_q_Kaf [label="f:lambda"];
     n_q_Kaf -> n_q_Kafk [label="k:lambda"];

@@ -11,13 +11,13 @@ digraph T_VERSION_CONTROL {
     n_q_g [shape=circle, label="g"];
     n_q_gi [shape=circle, label="i"];
     n_q_git [shape=circle, label="t"];
-    n_q₀ [shape=circle, label="q₀"];
-    __start -> n_q₀;
-    n_q₀ -> n_q_G [label="G:lambda"];
+    n_q_8320_ [shape=circle, label="q₀"];
+    __start -> n_q_8320_;
+    n_q_8320_ -> n_q_G [label="G:lambda"];
     n_q_G -> n_q_Gi [label="i:lambda"];
     n_q_Gi -> n_q_Git [label="t:lambda"];
     n_q_Git -> n_F_GIT [label="lambda:GIT"];
-    n_q₀ -> n_q_g [label="g:lambda"];
+    n_q_8320_ -> n_q_g [label="g:lambda"];
     n_q_g -> n_q_gi [label="i:lambda"];
     n_q_gi -> n_q_git [label="t:lambda"];
     n_q_git -> n_F_GIT [label="lambda:GIT"];

@@ -32,9 +32,9 @@ digraph T_FRONTEND {
     n_q_Vue_46_js [shape=circle, label="s"];
     n_q_VueJ [shape=circle, label="J"];
     n_q_VueJS [shape=circle, label="S"];
-    n_q₀ [shape=circle, label="q₀"];
-    __start -> n_q₀;
-    n_q₀ -> n_q_R [label="R:lambda"];
+    n_q_8320_ [shape=circle, label="q₀"];
+    __start -> n_q_8320_;
+    n_q_8320_ -> n_q_R [label="R:lambda"];
     n_q_R -> n_q_Re [label="e:lambda"];
     n_q_Re -> n_q_Rea [label="a:lambda"];
     n_q_Rea -> n_q_Reac [label="c:lambda"];
@@ -47,7 +47,7 @@ digraph T_FRONTEND {
     n_q_React -> n_q_ReactJ [label="J:lambda"];
     n_q_ReactJ -> n_q_ReactJS [label="S:lambda"];
     n_q_ReactJS -> n_F_REACT [label="lambda:REACT"];
-    n_q₀ -> n_q_A [label="A:lambda"];
+    n_q_8320_ -> n_q_A [label="A:lambda"];
     n_q_A -> n_q_An [label="n:lambda"];
     n_q_An -> n_q_Ang [label="g:lambda"];
     n_q_Ang -> n_q_Angu [label="u:lambda"];
@@ -58,7 +58,7 @@ digraph T_FRONTEND {
     n_q_Angular -> n_q_AngularJ [label="J:lambda"];
     n_q_AngularJ -> n_q_AngularJS [label="S:lambda"];
     n_q_AngularJS -> n_F_ANGULAR [label="lambda:ANGULAR"];
-    n_q₀ -> n_q_V [label="V:lambda"];
+    n_q_8320_ -> n_q_V [label="V:lambda"];
     n_q_V -> n_q_Vu [label="u:lambda"];
     n_q_Vu -> n_q_Vue [label="e:lambda"];
     n_q_Vue -> n_F_VUE [label="lambda:VUE"];
