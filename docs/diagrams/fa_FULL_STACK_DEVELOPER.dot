@@ -1,0 +1,19 @@
+digraph FULL_STACK_DEVELOPER {
+    rankdir=LR;
+    node [shape=circle, fontsize=10];
+    __start [shape=point, label=""];
+    n_q₀ [shape=circle, label="q₀"];
+    n_q₁ [shape=circle, label="q₁"];
+    n_q₂ [shape=circle, label="q₂"];
+    n_q₃ [shape=circle, label="q₃"];
+    n_q₄ [shape=circle, label="q₄"];
+    n_q₅ [shape=circle, label="q₅"];
+    n_q₆ [shape=doublecircle, label="q₆"];
+    __start -> n_q₀;
+    n_q₀ -> n_q₁ [label="JAVASCRIPT, TYPESCRIPT"];
+    n_q₁ -> n_q₂ [label="REACT, ANGULAR, VUE"];
+    n_q₂ -> n_q₃ [label="NODE_JS, DJANGO, SPRING_BOOT"];
+    n_q₃ -> n_q₄ [label="POSTGRESQL, SQL, NOSQL"];
+    n_q₄ -> n_q₅ [label="REST_API, lambda"];
+    n_q₅ -> n_q₆ [label="GIT"];
+}

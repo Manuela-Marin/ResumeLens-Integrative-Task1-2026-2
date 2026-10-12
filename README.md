@@ -102,5 +102,5 @@ implemented.
 | 2. Normalization                    | done    |
 | 3. Classification                   | done    |
 | 4. Candidate profile language       | done    |
-| Visualization and console interface | pending |
+| Visualization and console interface | done    |
 | Unit tests                          | pending |
