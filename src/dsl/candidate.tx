@@ -1,0 +1,70 @@
+CandidateProfile:
+    'candidate' name=STRING '{'
+        contact=Contact
+        ('summary' summary=STRING)?
+        ('education' '{'
+            education*=EducationRecord
+        '}')?
+        ('experience' '{'
+            experience*=ExperienceRecord
+        '}')?
+        'skills' '{'
+            skills*=Qualification
+        '}'
+        evaluations+=Evaluation
+    '}'
+;
+
+Contact:
+    'contact' '{'
+        'email' email=EmailAddress
+        ('phone' phone=STRING)?
+        ('location' location=STRING)?
+        ('role' role=STRING)?
+    '}'
+;
+
+EducationRecord:
+    'degree' degree=STRING
+    'institution' institution=STRING
+    'year' year=INT
+;
+
+ExperienceRecord:
+    'position' title=STRING
+    'organization' organization=STRING
+    'years' years=INT
+    ('responsibilities' '{'
+        responsibilities*=STRING
+    '}')?
+;
+
+Evaluation:
+    'evaluation' profile=ProfileName '{'
+        'pattern' verdict=Verdict
+        ('sequence' '{'
+            sequence*=Qualification
+        '}')?
+        ('note' note=STRING)?
+    '}'
+;
+
+Qualification:
+    /[A-Z][A-Z0-9_]*/
+;
+
+ProfileName:
+    /[A-Z][A-Z0-9_]*/
+;
+
+Verdict:
+    'ACCEPTED' | 'REJECTED'
+;
+
+EmailAddress:
+    /[A-Za-z0-9._%+\-]+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,}/
+;
+
+Comment:
+    /\/\/.*$/
+;

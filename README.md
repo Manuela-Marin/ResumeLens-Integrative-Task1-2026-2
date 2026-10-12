@@ -101,6 +101,6 @@ implemented.
 | 1. Extraction                       | done    |
 | 2. Normalization                    | done    |
 | 3. Classification                   | done    |
-| 4. Candidate profile language       | pending |
+| 4. Candidate profile language       | done    |
 | Visualization and console interface | pending |
 | Unit tests                          | pending |
