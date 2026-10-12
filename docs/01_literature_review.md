@@ -1,6 +1,6 @@
 # Literature Review
 
-Before implementing ResumeLens, I reviewed the existing work related to the main ideas behind the project. This helped me understand the available approaches, avoid using tools that would replace the work I am expected to develop, and make better decisions during implementation. This review focuses on three main topics: automated résumé screening, finite-state transducers for text normalization, and grammars and domain-specific languages. I also reviewed the tools used in the project and how the literature and course materials influenced my design decisions.
+Before implementing ResumeLens, I reviewed existing work related to the main ideas behind the project. This helped me understand the available approaches, avoid using tools that would replace the work I was expected to develop, and make better decisions during implementation. I focused on three main topics: automated résumé screening, finite-state transducers for text normalization, and grammars and domain-specific languages. I also reviewed the tools used in the project and how the literature influenced my design decisions.
 
 ---
 
@@ -12,13 +12,13 @@ Machine-learning approaches use examples of previous résumés to classify or ra
 
 Rule-based approaches work differently. Instead of learning from examples, they use predefined rules to recognize information and check whether it meets certain requirements. One advantage is that their decisions are easier to explain because each result can be linked to a specific rule. However, these systems can only recognize the patterns that have been defined in advance.
 
-For ResumeLens, I chose a rule-based approach because it fits the objective of the assignment. The document explains that the program should not rank candidates or make hiring decisions (p. 1). Instead, it must check whether the qualifications explicitly identified in a résumé match formally defined patterns (p. 1). Based on this requirement, I considered formal language models more appropriate than machine-learning models because they allow me to represent the patterns and check whether the input satisfies them.
+For ResumeLens, I chose a rule-based approach because it fits the objective of the project. The system does not rank candidates or make hiring decisions. Instead, it checks whether the qualifications identified in a résumé match formally defined patterns. I considered formal language models more appropriate for this task because they allow me to represent these patterns and check whether the input satisfies them.
 
 I also considered whether to use existing résumé-parsing and natural-language-processing libraries. Although these tools could make implementation easier, they would replace some of the steps I am expected to develop. Since the goal is to apply formal language concepts to the problem, I decided to implement the recognition and normalization stages myself.
 
-Another issue I identified is that the same qualification can be written in different ways. For example, `JavaScript`, `Javascript`, and `JS` may refer to the same skill. Similarly, `Scikit-learn`, `sklearn`, and `scikit learn` can refer to the same tool. Because of this, I decided to keep recognition and normalization as separate stages.
+Another issue I identified is that the same qualification can be written in different ways. For example, JavaScript, Javascript, and JS may refer to the same skill. Similarly, Scikit-learn, sklearn, and scikit learn can refer to the same tool. Because of this, I decided to keep recognition and normalization as separate stages.
 
-This decision also follows the assignment. On page 3, it states that stage 1 must not determine whether two expressions are equivalent. Therefore, I kept the recognition of qualifications separate from the process of determining which expressions represent the same thing.
+This separation is important because recognizing a qualification and determining whether two expressions represent the same thing are different tasks. I first identify the information written in the résumé and then normalize the skills into their canonical forms.
 
 ---
 
@@ -28,17 +28,17 @@ Finite-state transducers are used to transform an input into an output according
 
 Mohri (1997) explains how finite-state transducers are used in language processing and discusses properties that make them useful for these tasks. For example, transducers can be combined through composition and can be determinized and minimized under the appropriate conditions. Beesley and Karttunen (2003) provide further examples of how finite-state methods can be used to build morphological analyzers. Jurafsky and Martin also discuss these methods in their treatment of morphology.
 
-I connected these concepts with the examples studied in class. In lecture 6-7, slide 44, a transducer maps words to morphological information. Another example appears in lecture 8, slides 9-13, where a transducer relates the infinitive `llorar` to its conjugated forms. These examples helped me understand how transitions can process an input and produce a corresponding output.
+I connected these concepts with the examples studied in class. In these examples, transducers map words to morphological information or relate an infinitive, such as llorar, to its conjugated forms. They helped me understand how transitions can process an input and produce a corresponding output.
 
 For ResumeLens, I applied the same general idea to qualifications. Instead of processing word forms or verb conjugations, I use transducers to recognize different ways of writing a skill and produce its canonical form. This allows the program to represent equivalent qualifications consistently before comparing them.
 
-Two decisions in my implementation were influenced by the transducers studied in class.
+Two decisions in my implementation were influenced by these examples.
 
-**Output through a lambda transition.** In lecture 8, slide 11, I studied transitions that can produce output without consuming an input symbol. I applied this idea to the normalization transducers because it helps me produce the canonical form after recognizing the complete input. This is useful when one qualification is a prefix of another, such as `Java` and `JavaScript`, since I need to distinguish between the two.
+Output through a lambda transition. I used a lambda transition to produce the canonical form after recognizing the complete input. This is useful when one qualification is a prefix of another, such as Java and JavaScript, because I need to distinguish between the two.
 
-**Using a prefix tree.** I chose a prefix-tree structure because different expressions can share states when they begin with the same characters. This avoids repeating transitions for prefixes that several qualifications have in common and makes the transducers easier to organize.
+Using a prefix tree. I chose a prefix-tree structure because different expressions can share states when they begin with the same characters. This avoids repeating transitions for prefixes that several qualifications have in common and makes the transducers easier to organize.
 
-In ResumeLens, this structure allows me to represent multiple variants of qualifications without creating a completely independent path for every expression. It also makes the representation easier to maintain when I need to add or modify variants.
+In ResumeLens, this structure allows me to represent multiple qualification variants without creating a completely independent path for every expression. It also makes the representation easier to maintain when I need to add or modify variants.
 
 ---
 
@@ -46,17 +46,15 @@ In ResumeLens, this structure allows me to represent multiple variants of qualif
 
 Another part of ResumeLens is the representation of a candidate's qualifications in a structured format. To implement this, I use a small language with its own syntax and rules. This is related to the concept of domain-specific languages (DSLs).
 
-Fowler (2010) defines a DSL as a programming language with limited expressiveness that focuses on a particular domain. This definition is also presented in lecture 10, slide 7. Fowler distinguishes between external DSLs, which have their own syntax and require a parser, and internal DSLs, which are expressed using an existing programming language.
+Fowler (2010) defines a DSL as a programming language with limited expressiveness that focuses on a particular domain. Fowler distinguishes between external DSLs, which have their own syntax and require a parser, and internal DSLs, which are expressed using an existing programming language.
 
 I chose an external DSL for stage 4 because the candidate profile needs to follow a specific structure and be checked before it is used by the program. The language has its own grammar and is parsed using textX.
 
 One reason for this decision is that I wanted to separate the information produced by the previous stages from the process of displaying it. Without a defined language, the program could send the results directly to the HTML generator, but it would be harder to ensure that the data follows the expected structure. By using a DSL, I can reject invalid representations before displaying them.
 
-This decision follows the assignment, which requires the program to reject representations that violate the lexical or syntactic rules (p. 6). For this reason, I use the grammar not only to organize the data but also to validate its structure.
+I use the grammar not only to organize the data but also to validate its structure. This means that the program can check whether a candidate profile follows the expected syntax instead of assuming that every generated or manually written representation is correct.
 
-I used Extended Backus-Naur Form (EBNF) to describe the grammar because it allows me to define the syntax of the candidate profile language. Lecture 9 explains the relationship between EBNF and earlier grammar notations, while lecture 6-7, slides 171-188, presents the use of context-free grammars and Backus-Naur Form (BNF) to define programming language syntax.
-
-In `docs/03_formalization.md`, I documented the grammar using the EBNF notation studied in lecture 9, slide 21. I used four main forms: sequence, choice, option, and repetition. These forms allow me to specify the order of elements and determine which parts of a candidate profile are required or optional.
+I used Extended Backus-Naur Form (EBNF) to describe the grammar because it allows me to define the syntax of the candidate profile language. The grammar documented in docs/03_formalization.md uses four main forms: sequence, choice, option, and repetition. These forms allow me to specify the order of elements and determine which parts of a candidate profile are required or optional.
 
 I also considered an important detail about the parser. TextX uses PEG parsing, where the order of alternatives can affect how an expression is interpreted. This differs from the way alternatives are handled in a general context-free grammar. In the relevant parts of my grammar, alternatives begin with different terminals, which helps reduce the possibility of ambiguity. However, I still need to consider this difference when defining the grammar so that it works correctly with textX.
 
@@ -82,15 +80,11 @@ I selected textX because it allows me to work with structured objects instead of
 
 ### Diagram Tools
 
-The assignment requires graphical representations of the transducers (p. 4) and transition diagrams for the automata (p. 5). I selected different tools depending on the complexity of each model.
+The project includes graphical representations of the transducers and transition diagrams for the automata. Since these models contain many states and transitions, I decided to generate all the diagrams automatically from the implementation.
 
-I chose Visual Paradigm to draw the automata manually because each one has seven states, making the diagrams manageable. This allows me to show their states and transitions clearly.
+I use diagram_exporter to generate the diagrams in DOT format and pydot and Graphviz to convert them into PNG images. This avoids drawing the diagrams manually and helps ensure that they represent the models defined in the code. It also makes future changes easier to manage because the diagrams can be generated again after modifying the formal models.
 
-For the transducers, I chose automatic generation in DOT format because they contain many more states and transitions. Drawing them manually would take more time and make future changes harder to manage. DOT provides a way to describe the graphs, and Graphviz can use these descriptions to generate the diagrams.
-
-I also considered the examples involving `pydot` presented in lecture 10, slide 86, and lecture 11, slide 15. When Graphviz is not installed locally, I can use GraphvizOnline as an alternative to generate the diagrams from the DOT descriptions.
-
-I selected this approach to generate the required diagrams without introducing an additional drawing library into the project.
+If Graphviz is not installed locally, the generated DOT descriptions can also be used with GraphvizOnline to visualize the diagrams.
 
 ---
 
@@ -99,18 +93,18 @@ I selected this approach to generate the required diagrams without introducing a
 After reviewing the literature and the course materials, I made several decisions for ResumeLens. The following table summarizes the main decisions and the reasons behind them.
 
 
-| Design decision                                           | Reason                                                                                                                                          |
-| --------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
-| Use rule-based methods instead of machine learning        | I need to check qualifications against formally defined patterns rather than rank candidates or predict hiring outcomes.                        |
-| Avoid résumé-parsing and NLP libraries                  | I need to implement the recognition and normalization stages myself using formal language concepts.                                             |
-| Separate recognition from normalization                   | Recognizing a qualification and determining which expressions are equivalent are different tasks. The assignment also requires this separation. |
-| Use character-level transducers organized as prefix trees | This structure allows me to recognize different variants while sharing transitions between expressions with common prefixes.                    |
-| Produce the canonical form through a lambda transition    | I applied this construction from class to help distinguish qualifications where one name is a prefix of another.                                |
-| Use an external DSL for candidate profiles                | I need a defined structure that allows me to validate the candidate profile before displaying it.                                               |
-| Define the grammar in EBNF and implement it with textX    | I use EBNF to describe the language rules and textX to parse and validate candidate profiles.                                                   |
-| Use Visual Paradigm for automata and DOT for transducers  | I can draw the smaller automata manually and generate the larger transducer diagrams automatically.                                             |
+| Design decision                                             | Reason                                                                                                                                          |
+| ----------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| Use rule-based methods instead of machine learning          | I need to check qualifications against formally defined patterns rather than rank candidates or predict hiring outcomes.                        |
+| Avoid résumé-parsing and NLP libraries                    | I need to implement the recognition and normalization stages myself using formal language concepts.                                             |
+| Separate recognition from normalization                     | Recognizing a qualification and determining which expressions are equivalent are different tasks. The assignment also requires this separation. |
+| Use character-level transducers organized as prefix trees   | This structure allows me to recognize different variants while sharing transitions between expressions with common prefixes.                    |
+| Produce the canonical form through a lambda transition      | I applied this construction from class to help distinguish qualifications where one name is a prefix of another.                                |
+| Use an external DSL for candidate profiles                  | I need a defined structure that allows me to validate the candidate profile before displaying it.                                               |
+| Define the grammar in EBNF and implement it with textX      | I use EBNF to describe the language rules and textX to parse and validate candidate profiles.                                                   |
+| Generate all diagrams automatically from the implementation | This avoids manual drawing and helps keep the diagrams consistent with the formal models in the code.                                           |
 
-Overall, this review helped me understand how the theoretical concepts studied in class can be applied to ResumeLens. It also helped me choose the tools and structures that best fit the assignment requirements. By keeping the recognition, normalization, and validation stages separate, I can organize the implementation more clearly and explain the role of each formal model in the program.
+Overall, this review helped me understand how the theoretical concepts studied in class can be applied to ResumeLens. It also helped me choose the tools and structures that best fit the project. By keeping the recognition, normalization, and validation stages separate, I can organize the implementation more clearly and explain the role of each formal model in the program.
 
 ---
 

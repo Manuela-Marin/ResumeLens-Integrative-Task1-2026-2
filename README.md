@@ -52,22 +52,19 @@ Python 3.8 or later is required.
 pip install -r requirements.txt
 ```
 
-`pydot` and a Graphviz installation are only needed to convert the diagrams
-of the transducers and the automata to PNG. Without them the program still
-writes the `.dot` files, which can be pasted into
-https:.
+pydot and a Graphviz installation are only needed to convert the diagrams of the transducers and the automata to PNG. Without them the program still writes the .dot files, which can be pasted into https://dreampuf.github.io/GraphvizOnline/.
 
 ### Opening the project in IntelliJ IDEA
 
 1. `File > Open` and select the `ResumeLens` folder.
 2. `File > Project Structure > SDK`: choose a Python 3 interpreter.
-3. Right-click the `src` folder and choose
-   `Mark Directory as > Sources Root`, so that `import resumelens` resolves.
 
-From a terminal, the equivalent is to put `src` on the import path:
+`src` is a package, so the repository root is the import root and nothing
+else has to be configured. From a terminal, run everything from the
+repository root:
 
 ```bash
-PYTHONPATH=src python -m resumelens.main
+python -m src.main
 ```
 
 ---
@@ -78,29 +75,50 @@ PYTHONPATH=src python -m resumelens.main
 ResumeLens/
 ├── README.md
 ├── requirements.txt
-├── docs/                 design documents, in Markdown
-├── src/resumelens/       source code
-├── data/resumes/         sample résumés
-└── tests/                unit tests
+├── docs/                      design documents, in Markdown
+│   └── diagrams/              transducer and automaton diagrams
+├── src/
+│   ├── main.py                console interface
+│   ├── profiles/              the four profiles, as data
+│   ├── ingestion/             reading a résumé from disk
+│   ├── extraction/            stage 1, regular expressions
+│   ├── normalization/         stage 2, finite-state transducers
+│   ├── classification/        stage 3, finite automata
+│   ├── dsl/                   stage 4, candidate profile language
+│   └── visualization/         HTML, Markdown and diagram output
+├── data/resumes/              sample résumés
+└── tests/                     unit tests
 ```
+
+The design of each package, with the inputs and outputs of every function,
+is in [`docs/02_module_design.md`](docs/02_module_design.md).
 
 ---
 
+## Tests
+
+```bash
+python -m unittest discover -s tests -t .
+```
+
+68 tests, one file per stage. The scenarios they cover are specified in
+[`docs/04_test_cases.md`](docs/04_test_cases.md).
+
 ## State of the project
 
-This README grows with the project. Sections on usage, on the résumé input
-format and on the test suite are added as the corresponding parts are
-implemented.
 
+| Stage                               | State |
+| ----------------------------------- | ----- |
+| Project setup                       | done  |
+| Literature review                   | done  |
+| Module and test design              | done  |
+| 1. Extraction                       | done  |
+| 2. Normalization                    | done  |
+| 3. Classification                   | done  |
+| 4. Candidate profile language       | done  |
+| Visualization and console interface | done  |
+| Unit tests                          | done  |
 
-| Stage                               | State   |
-| ----------------------------------- | ------- |
-| Project setup                       | done    |
-| Literature review                   | done    |
-| Module and test design              | pending |
-| 1. Extraction                       | done    |
-| 2. Normalization                    | done    |
-| 3. Classification                   | done    |
-| 4. Candidate profile language       | done    |
-| Visualization and console interface | done    |
-| Unit tests                          | done    |
+```
+
+```
